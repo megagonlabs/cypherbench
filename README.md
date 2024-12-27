@@ -1,1 +1,9 @@
 # cypherbench
+
+[![](https://img.shields.io/badge/license-apache2.0-green.svg)](LICENSE) 
+[![](https://img.shields.io/badge/🤗-HuggingFace-red.svg)](https://huggingface.co/datasets/megagonlabs/cypherbench)
+[![](https://img.shields.io/badge/emnlp23-Paper-yellow.svg)]()
+
+### Demo graphs
+[nba](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
+(password: `cypherbench`)
