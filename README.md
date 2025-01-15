@@ -7,3 +7,11 @@
 ### Demo graphs
 [nba](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
 (password: `cypherbench`)
+
+### Release Plan
+
+- [x] text2cypher tasks
+- [ ] 11 property graphs
+- [ ] EX/PSJS implementation and evaluation scripts
+- [ ] Wikidata RDF-to-property-graph engine
+- [ ] Text2cypher task generation pipeline
