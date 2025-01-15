@@ -8,6 +8,14 @@
 [nba](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
 (password: `cypherbench`)
 
+Sample queries:
+```cypher
+MATCH (n:Player {name: 'LeBron James'})-[r]-(m) RETURN *
+```
+```cypher
+MATCH (t:Team)-[]-(d:Division)-[]-(c:Conference) RETURN *
+```
+
 ### Release Plan
 
 - [x] text2cypher tasks
