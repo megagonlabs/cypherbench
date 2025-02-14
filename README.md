@@ -19,7 +19,7 @@ MATCH (t:Team)-[]-(d:Division)-[]-(c:Conference) RETURN *
 ### Release Plan
 
 - [x] text2cypher tasks
-- [ ] 11 property graphs
+- [x] 11 property graphs
 - [ ] EX/PSJS implementation and evaluation scripts
 - [ ] Wikidata RDF-to-property-graph engine
 - [ ] Text2cypher task generation pipeline
