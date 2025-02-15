@@ -33,7 +33,7 @@ pip install -e .
 
 ### 2. Download the dataset
 
-You can easily download the dataset (both the graphs and text2cypher tasks) by cloning the [HuggingFace dataset repository](https://huggingface.co/datasets/megagonlabs/cypherbench):
+To download the dataset (both the graphs and text2cypher tasks), simply clone the [HuggingFace dataset repository](https://huggingface.co/datasets/megagonlabs/cypherbench):
 
 ```bash
 # Make sure you have git-lfs installed (https://git-lfs.com)
