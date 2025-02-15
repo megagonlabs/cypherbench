@@ -9,7 +9,7 @@
 - [Feb 14, 2025] We have released the nl2cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
 - [Feb 13, 2025] The [11 property graphs](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs) are now available on 🤗HuggingFace!
 - [Dec 27, 2024] We have deployed a [demo NBA graph](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)(password: `cypherbench`) at Neo4j AuraDB! Check it out! You can run Cypher queries like `MATCH (n:Player {name: 'LeBron James'})-[r]-(m) RETURN *`.
-- [Dec 27, 2024] The nl2cypher tasks are now available on [🤗HuggingFace Datasets](https://huggingface.co/datasets/megagonlabs/cypherbench)! 
+- [Dec 27, 2024] The [training and test sets](https://huggingface.co/datasets/megagonlabs/cypherbench) are now available on 🤗HuggingFace! 
 
 
 ## 🚀 Quickstart
