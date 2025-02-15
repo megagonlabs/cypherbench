@@ -4,6 +4,11 @@
 [![](https://img.shields.io/badge/🤗-HuggingFace-red.svg)](https://huggingface.co/datasets/megagonlabs/cypherbench)
 [![](https://img.shields.io/badge/paper-arxiv-yellow.svg)](https://arxiv.org/pdf/2412.18702)
 
+> CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era <br/>
+> Yanlin Feng, Simone Papicchio, Sajjadur Rahmanα
+
+![CypherBench](assets/text2cypher.png)
+
 ## 🔥 Updates
 
 - [Feb 14, 2025] We have released the text2cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
