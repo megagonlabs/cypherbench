@@ -1,0 +1,83 @@
+{
+  "domains": [
+    "art",
+    "biology",
+    "company",
+    "fictional_character",
+    "flight_accident",
+    "geography",
+    "movie",
+    "nba",
+    "politics",
+    "soccer",
+    "terrorist_attack"
+  ],
+  "full": {
+    "art": {
+      "host": "localhost",
+      "port": 15060,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "biology": {
+      "host": "localhost",
+      "port": 15061,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "company": {
+      "host": "localhost",
+      "port": 15062,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "fictional_character": {
+      "host": "localhost",
+      "port": 15063,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "flight_accident": {
+      "host": "localhost",
+      "port": 15064,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "geography": {
+      "host": "localhost",
+      "port": 15065,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "movie": {
+      "host": "localhost",
+      "port": 15066,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "nba": {
+      "host": "localhost",
+      "port": 15067,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "politics": {
+      "host": "localhost",
+      "port": 15068,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "soccer": {
+      "host": "localhost",
+      "port": 15069,
+      "username": "neo4j",
+      "password": "cypherbench"
+    },
+    "terrorist_attack": {
+      "host": "localhost",
+      "port": 15070,
+      "username": "neo4j",
+      "password": "cypherbench"
+    }
+  }
+}
