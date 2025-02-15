@@ -3,7 +3,7 @@ services:
     container_name: cypherbench-art
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/art_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/art_simplekg.json:/init/graph.json
     ports:
       - 15060:7687
     environment:
@@ -15,7 +15,7 @@ services:
     container_name: cypherbench-biology
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/biology_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/biology_simplekg.json:/init/graph.json
     ports:
       - 15061:7687
     environment:
@@ -27,7 +27,7 @@ services:
     container_name: cypherbench-company
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/company_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/company_simplekg.json:/init/graph.json
     ports:
       - 15062:7687
     environment:
@@ -39,7 +39,7 @@ services:
     container_name: cypherbench-fictional-character
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/fictional_character_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/fictional_character_simplekg.json:/init/graph.json
     ports:
       - 15063:7687
     environment:
@@ -51,7 +51,7 @@ services:
     container_name: cypherbench-flight-accident
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/flight_accident_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/flight_accident_simplekg.json:/init/graph.json
     ports:
       - 15064:7687
     environment:
@@ -63,7 +63,7 @@ services:
     container_name: cypherbench-geography
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/geography_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/geography_simplekg.json:/init/graph.json
     ports:
       - 15065:7687
     environment:
@@ -75,7 +75,7 @@ services:
     container_name: cypherbench-movie
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/movie_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/movie_simplekg.json:/init/graph.json
     ports:
       - 15066:7687
     environment:
@@ -87,7 +87,7 @@ services:
     container_name: cypherbench-nba
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/nba_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/nba_simplekg.json:/init/graph.json
     ports:
       - 15067:7687
     environment:
@@ -99,7 +99,7 @@ services:
     container_name: cypherbench-politics
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/politics_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/politics_simplekg.json:/init/graph.json
     ports:
       - 15068:7687
     environment:
@@ -111,7 +111,7 @@ services:
     container_name: cypherbench-soccer
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/soccer_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/soccer_simplekg.json:/init/graph.json
     ports:
       - 15069:7687
     environment:
@@ -123,7 +123,7 @@ services:
     container_name: cypherbench-terrorist-attack
     image: megagonlabs/neo4j-with-loader:2.4
     volumes:
-      - ./graphs/terrorist_attack_simplekg.json:/init/graph.json
+      - ../benchmark/graphs/simplekg/terrorist_attack_simplekg.json:/init/graph.json
     ports:
       - 15070:7687
     environment:
