@@ -58,6 +58,8 @@ To stop the Neo4j databases, run `bash stop_neo4j_full.sh`
 
 ```bash
 cd .. # Go back to the root directory
+
+# Make sure you have set the OPENAI_API_KEY environment variable to use the OpenAI API
 python -m cypherbench.baseline.zero_shot_nl2cypher --llm gpt-4o-mini --result_dir output/gpt-4o-mini/
 ```
 
