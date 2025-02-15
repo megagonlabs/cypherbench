@@ -59,6 +59,16 @@ cd .. # Go back to the root directory
 python -m cypherbench.baseline.zero_shot_nl2cypher --llm gpt-4o-mini --result_dir output/gpt-4o-mini/
 ```
 
+There are two ways to fetch the graph schemas:
+- (default) `--load_schema_from json` loads the schema from the local JSON files stored in [the benchmark/graphs/schemas directory](benchmark/graphs/schemas). When using this option, the nl2cypher code does not depend on the Neo4j databases.
+- `--load_schema_from neo4j` fetches the schema from the Neo4j database by executing special Cypher queries*. This option requires the Neo4j databases to be fully loaded.
+
+*We don't use apoc.meta.data() by default, see Appendix A.4 in the paper for details.
+
+### 5. Evaluate execution accuracy (EX), PSJS, and other metrics
+
+TODO (to be released soon)
+
 
 ## Future Release Plan
 
