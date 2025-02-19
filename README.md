@@ -53,7 +53,7 @@ Now, you can deploy all 11 property graphs with a single Docker Compose command 
 # Make sure you have Docker installed
 cd docker/
 
-#  This script ensures required files exist before running the docker-compose command.
+#  This script first ensures required files exist, then runs the docker-compose command
 bash start_neo4j_full.sh
 
 # check if the graphs are fully loaded (it typically takes at least 15 minutes).
