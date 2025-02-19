@@ -89,7 +89,7 @@ Metric implementation:
 
 Reference performance for `gpt-4o-mini`:
 
-```json
+```
 {
   "overall": {
     "execution_accuracy": 0.3143,
