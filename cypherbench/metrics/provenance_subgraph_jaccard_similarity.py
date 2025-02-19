@@ -16,6 +16,11 @@ logger = logging.getLogger(__name__)
 
 
 def split_by_union(cypher: str) -> List[str]:
+    """
+    If the cypher query is a UNION of multiple queries, we cannot simply attach `RETURN *` to the MATCH clause
+    to get its provenance subgraph. Therefore, we split the cypher query by UNION and get the provenance subgraph
+    for each subquery separately.
+    """
     # Regex pattern to match UNION and split the cypher
     pattern = r'\bUNION\b'
 
