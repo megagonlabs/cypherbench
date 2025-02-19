@@ -71,7 +71,7 @@ python -m cypherbench.baseline.zero_shot_nl2cypher --llm gpt-4o-mini --result_di
 ```
 
 There are two ways to fetch the graph schemas when running text2cypher:
-- (default) `--load_schema_from json` loads the schema from the local JSON files stored in [the benchmark/graphs/schemas directory](benchmark/graphs/schemas). When using this option, the Neo4j databases are not used during text2cypher.
+- (default) `--load_schema_from json` loads the schema from the local JSON files stored in [the benchmark/graphs/schemas directory](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs/schemas). When using this option, the Neo4j databases are not used during text2cypher.
 - `--load_schema_from neo4j` fetches the schema from the Neo4j database by executing special Cypher queries*. This option requires the Neo4j databases to be fully loaded.
 
 *We don't use apoc.meta.data() by default, see Appendix A.4 in the paper for details.
