@@ -64,7 +64,7 @@ To stop the Neo4j databases, run `bash stop_neo4j_full.sh`
 
 ### 4. Run `gpt-4o-mini` on CypherBench
 
-⚠️ Running `gpt-4o-mini` cost around $0.3. First, make sure you have set the `OPENAI_API_KEY` environment variable to use the OpenAI API.
+⚠️ Running `gpt-4o-mini` on the entire test set costs around $0.3. First, make sure you have set the `OPENAI_API_KEY` environment variable to use the OpenAI API.
 
 ```bash
 python -m cypherbench.baseline.zero_shot_nl2cypher --llm gpt-4o-mini --result_dir output/gpt-4o-mini/
