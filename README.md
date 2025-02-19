@@ -73,10 +73,32 @@ There are two ways to fetch the graph schemas when running text2cypher:
 
 *We don't use apoc.meta.data() by default, see Appendix A.4 in the paper for details.
 
-### 5. Evaluate execution accuracy (EX), PSJS, and other metrics
+### 5. Evaluate metrics
 
-TODO (to be released soon)
+```bash
+python -m cypherbench.evaluate --result_dir output/gpt-4o-mini/  --num_threads 8  # Adjust the number of threads as needed
+```
 
+Metric implementation:
+- Execution Accuracy (EX): [execution_accuracy.py](cypherbench/metrics/execution_accuracy.py)
+- Provenance Subgraph Jaccard Similarity (PSJS): [provenance_subgraph_jaccard_similarity.py](cypherbench/metrics/provenance_subgraph_jaccard_similarity.py)
+- Executable Percentage: [executable.py](cypherbench/metrics/executable.py)
+
+
+Reference performance for `gpt-4o-mini`:
+
+```json
+{
+  "overall": {
+    "execution_accuracy": 0.3143,
+    "psjs": 0.4591,
+    "executable": 0.8739
+  },
+  "by_graph": {
+    "flight_accident": 0.4603,
+    "fictional_character": 0.3273,
+...
+```
 
 ## Future Release Plan
 
