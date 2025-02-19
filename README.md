@@ -45,17 +45,20 @@ git clone https://huggingface.co/datasets/megagonlabs/cypherbench benchmark
 
 ### 3. Deploy the graphs
 
+⚠️ Deploying all 11 graphs consumes a lot of memory. We recommend using a machine with at least 128GB of RAM.
+
 Now, you can deploy all 11 property graphs with a single Docker Compose command using our [custom Neo4j Docker image](https://hub.docker.com/repository/docker/megagonlabs/neo4j-with-loader/general) and our [Docker Compose configuration](docker/docker-compose-full.yml):
 
 ```bash
 # Make sure you have Docker installed
 cd docker/
 
-#  This script additionally performs sanity checks to ensure required files exist before running the docker-compose command.
+#  This script ensures required files exist before running the docker-compose command.
 bash start_neo4j_full.sh
-```
 
-Run the script TODO to check if the graphs are fully loaded (it typically takes at least 15 minutes).
+# check if the graphs are fully loaded (it typically takes at least 15 minutes).
+python scripts/print_db_status.py
+```
 
 To stop the Neo4j databases, run `bash stop_neo4j_full.sh`
 
