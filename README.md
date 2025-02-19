@@ -3,6 +3,7 @@
 [![](https://img.shields.io/badge/license-apache2.0-green.svg)](LICENSE) 
 [![](https://img.shields.io/badge/🤗-HuggingFace-red.svg)](https://huggingface.co/datasets/megagonlabs/cypherbench)
 [![](https://img.shields.io/badge/paper-arxiv-yellow.svg)](https://arxiv.org/pdf/2412.18702)
+[![](https://img.shields.io/badge/demo_graph-Neo4j-blue.svg)](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
 
 > CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era <br/>
 > Yanlin Feng, Simone Papicchio, Sajjadur Rahmanα
@@ -11,6 +12,7 @@
 
 ## 🔥 Updates
 
+- [Feb 19, 2025] We have released the evaluation scripts and the EX and PSJS implementations!
 - [Feb 14, 2025] We have released the text2cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
 - [Feb 13, 2025] The [11 property graphs](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs) are now available on 🤗HuggingFace! We also make it super easy to deploy them (see the instructions below).
 - [Dec 27, 2024] We have deployed a [demo NBA graph](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)(password: `cypherbench`) at Neo4j AuraDB! Check it out! You can run Cypher queries like `MATCH (n:Player {name: 'LeBron James'})-[r]-(m) RETURN *`.
@@ -100,11 +102,24 @@ Reference performance for `gpt-4o-mini`:
 ...
 ```
 
-## Future Release Plan
+## 📅 Future Release Plan
 
 - [x] text2cypher tasks
 - [x] 11 property graphs and graph deployment docker
 - [x] text2cypher baseline code
-- [ ] EX/PSJS implementation and evaluation scripts
+- [x] EX/PSJS implementation and evaluation scripts
 - [ ] Wikidata RDF-to-property-graph engine
 - [ ] Text2cypher task generation pipeline
+
+Please feel free to open an issue if you have any questions or suggestions!
+
+## 📚 Citation
+
+```
+@article{feng2024cypherbench,
+  title={CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era},
+  author={Feng, Yanlin and Papicchio, Simone and Rahman, Sajjadur},
+  journal={arXiv preprint arXiv:2412.18702},
+  year={2024}
+}
+```
