@@ -1,4 +1,4 @@
-# CypherBench
+# 🔑 CypherBench
 
 [![](https://img.shields.io/badge/license-apache2.0-green.svg)](LICENSE) 
 [![](https://img.shields.io/badge/🤗-HuggingFace-red.svg)](https://huggingface.co/datasets/megagonlabs/cypherbench)
