@@ -9,7 +9,6 @@ from cypherbench.metrics import *
 from cypherbench.neo4j_connector import Neo4jConnector
 from cypherbench.schema import Nl2CypherSample
 
-
 RETURN_PATTERN_MAPPING = {
     "n_name": "n_name",
     "n_prop": "n_prop_combined",
@@ -76,8 +75,8 @@ def main():
     with open(args.neo4j_info) as fin:
         neo4j_info = json.load(fin)
 
-    graph2conn = {graph: Neo4jConnector(name=graph, **info) for graph, info in
-                  neo4j_info['full'].items()}
+    graph2conn = {graph: Neo4jConnector(name=graph, **neo4j_info['full'][graph])
+                  for graph in neo4j_info['test_domains']}
 
     # Use ThreadPoolExecutor for multithreading
     result_with_metrics = []
