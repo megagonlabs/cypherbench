@@ -29,7 +29,8 @@ def main():
     with open(args.neo4j_info) as fin:
         neo4j_info = json.load(fin)
 
-    is_all_ready = True
+    is_train_ready = True
+    is_test_ready = True
     df = []
     for graph, info in tqdm(neo4j_info['full'].items(), desc='Connecting to Neo4j',
                             total=len(neo4j_info['full'])):
@@ -43,7 +44,10 @@ def main():
             pass
 
         if num_relations != graph2rels[graph]:
-            is_all_ready = False
+            if graph in neo4j_info['train_domains']:
+                is_train_ready = False
+            else:
+                is_test_ready = False
         df.append((
             graph,
             f'{info["host"]}:{info["port"]}',
@@ -58,10 +62,15 @@ def main():
                    floatfmt='.0f'))
 
     print()
-    if is_all_ready:
-        print('All graphs are ready!')
+    if is_train_ready:
+        print('All training graphs are ready!')
     else:
-        print('Warning: At least one graph is not ready!')
+        print('Warning: At least one training graph is not ready!')
+
+    if is_test_ready:
+        print('All testing graphs are ready!')
+    else:
+        print('Warning: At least one testing graph is not ready!')
 
 
 if __name__ == '__main__':
