@@ -42,8 +42,8 @@ def load_schema_from_json(graphs: list[str]) -> dict[str, str]:
 
 def load_schema_from_neo4j(neo4j_info: dict) -> dict[str, str]:
     graph2schema = {}
-    for graph, info in tqdm(neo4j_info['full'].items(), desc='Loading schema from Neo4j',
-                            total=len(neo4j_info['full'])):
+    for graph in tqdm(neo4j_info['test_domains'], desc='Loading schema from Neo4j'):
+        info = neo4j_info['full'][graph]
         neo4j_conn = Neo4jConnector(name=graph, **info)
 
         # mode='apoc' uses apoc.meta.data() to fetch schema from Neo4j. On large graphs this might result in an incomplete schema.
@@ -94,7 +94,7 @@ def main():
     if args.load_schema_from == 'neo4j':
         graph2schema = load_schema_from_neo4j(neo4j_info)
     elif args.load_schema_from == 'json':
-        graph2schema = load_schema_from_json(neo4j_info['domains'])
+        graph2schema = load_schema_from_json(neo4j_info['test_domains'])
     else:
         raise ValueError(f'Invalid load_schema_from: {args.load_schema_from}')
 

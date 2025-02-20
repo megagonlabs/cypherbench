@@ -1,16 +1,18 @@
 {
-  "domains": [
+  "train_domains": [
     "art",
     "biology",
+    "soccer",
+    "terrorist_attack"
+  ],
+  "test_domains": [
     "company",
     "fictional_character",
     "flight_accident",
     "geography",
     "movie",
     "nba",
-    "politics",
-    "soccer",
-    "terrorist_attack"
+    "politics"
   ],
   "full": {
     "art": {

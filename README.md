@@ -56,7 +56,7 @@ cd docker/
 bash start_neo4j_test.sh  #  This script first checks if required files exist, then runs the docker-compose command
 cd .. 
 
-# check if the graphs are fully loaded (it typically takes at least 15 minutes).
+# check if the graphs are fully loaded (it typically takes at least 10 minutes).
 python scripts/print_db_status.py
 ```
 
