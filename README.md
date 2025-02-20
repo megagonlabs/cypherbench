@@ -12,6 +12,7 @@
 
 ## 🔥 Updates
 
+- [Feb 20, 2025] We updated the graph deployment configuration to reduce RAM usage.
 - [Feb 19, 2025] We have released the evaluation scripts and the EX and PSJS implementations!
 - [Feb 14, 2025] We have released the text2cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
 - [Feb 13, 2025] The [11 property graphs](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs) are now available on 🤗HuggingFace! We also make it super easy to deploy them (see the instructions below).
