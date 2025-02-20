@@ -12,13 +12,6 @@ fi
 declare -a graphs=(
   "art_simplekg.json"
   "biology_simplekg.json"
-  "company_simplekg.json"
-  "fictional_character_simplekg.json"
-  "flight_accident_simplekg.json"
-  "geography_simplekg.json"
-  "movie_simplekg.json"
-  "nba_simplekg.json"
-  "politics_simplekg.json"
   "soccer_simplekg.json"
   "terrorist_attack_simplekg.json"
 )
@@ -41,4 +34,4 @@ fi
 
 # Run docker-compose
 echo "All required graph files are present. Starting Docker Compose."
-docker-compose -f docker-compose-full.yml -p cypherbench_full up -d
+docker-compose -f docker-compose-train.yml -p cypherbench_train up -d

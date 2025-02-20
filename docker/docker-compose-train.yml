@@ -1,0 +1,48 @@
+services:
+  cypherbench-art:
+    container_name: cypherbench-art
+    image: megagonlabs/neo4j-with-loader:2.4
+    volumes:
+      - ../benchmark/graphs/simplekg/art_simplekg.json:/init/graph.json
+    ports:
+      - 15060:7687
+    environment:
+      NEO4J_AUTH: $NEO4J_USERNAME/$NEO4J_PASSWORD
+      NEO4J_server_http__enabled__modules: "TRANSACTIONAL_ENDPOINTS,UNMANAGED_EXTENSIONS,ENTERPRISE_MANAGEMENT_ENDPOINTS"
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+
+  cypherbench-biology:
+    container_name: cypherbench-biology
+    image: megagonlabs/neo4j-with-loader:2.4
+    volumes:
+      - ../benchmark/graphs/simplekg/biology_simplekg.json:/init/graph.json
+    ports:
+      - 15061:7687
+    environment:
+      NEO4J_AUTH: $NEO4J_USERNAME/$NEO4J_PASSWORD
+      NEO4J_server_http__enabled__modules: "TRANSACTIONAL_ENDPOINTS,UNMANAGED_EXTENSIONS,ENTERPRISE_MANAGEMENT_ENDPOINTS"
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+
+  cypherbench-soccer:
+    container_name: cypherbench-soccer
+    image: megagonlabs/neo4j-with-loader:2.4
+    volumes:
+      - ../benchmark/graphs/simplekg/soccer_simplekg.json:/init/graph.json
+    ports:
+      - 15069:7687
+    environment:
+      NEO4J_AUTH: $NEO4J_USERNAME/$NEO4J_PASSWORD
+      NEO4J_server_http__enabled__modules: "TRANSACTIONAL_ENDPOINTS,UNMANAGED_EXTENSIONS,ENTERPRISE_MANAGEMENT_ENDPOINTS"
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
+
+  cypherbench-terrorist-attack:
+    container_name: cypherbench-terrorist-attack
+    image: megagonlabs/neo4j-with-loader:2.4
+    volumes:
+      - ../benchmark/graphs/simplekg/terrorist_attack_simplekg.json:/init/graph.json
+    ports:
+      - 15070:7687
+    environment:
+      NEO4J_AUTH: $NEO4J_USERNAME/$NEO4J_PASSWORD
+      NEO4J_server_http__enabled__modules: "TRANSACTIONAL_ENDPOINTS,UNMANAGED_EXTENSIONS,ENTERPRISE_MANAGEMENT_ENDPOINTS"
+      NEO4J_PLUGINS: '["apoc", "graph-data-science"]'
