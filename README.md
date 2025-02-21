@@ -8,7 +8,7 @@
 > CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era <br/>
 > Yanlin Feng, Simone Papicchio, Sajjadur Rahmanα
 
-![CypherBench](assets/text2cypher.png)
+<img src="assets/text2cypher.png" width="75%">
 
 ## 🔥 Updates
 
