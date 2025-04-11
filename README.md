@@ -48,7 +48,7 @@ git clone https://huggingface.co/datasets/megagonlabs/cypherbench benchmark
 
 ### 3. Deploy the graphs using Docker
 
-⚠️ Deploying the graphs requires significant memory. We recommend using a machine with at least 64GB of RAM when deploying the 7 test graphs and 128GB when deploying all 11 graphs. Additionally, ensure that Docker is installed before proceeding.
+⚠️ Deploying the graphs requires significant memory. We recommend using a machine with at least 64GB of RAM when deploying the 7 test graphs and 128GB when deploying all 11 graphs. Additionally, ensure that Docker is installed ([Docker installation instructions](https://docs.docker.com/engine/install/)) before proceeding.
 
 Now, you can deploy the 7 test graphs with a single Docker Compose command using our [custom Neo4j Docker image](https://hub.docker.com/repository/docker/megagonlabs/neo4j-with-loader/general) and our [Docker Compose configuration](docker/docker-compose-test.yml):
 
