@@ -1,0 +1,421 @@
+{
+  "match_patterns": [
+    {
+      "category": "basic_(n)",
+      "cypher": "MATCH (n)",
+      "nl_args": {
+        "n_desc": "${n_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n*)",
+      "cypher": "MATCH (n<name>)",
+      "nl_args": {
+        "n_desc": "${n_name}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0)",
+      "cypher": "MATCH (n)-[r0]->(m0)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} ${m0_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0)",
+      "cypher": "MATCH (n)<-[r0]-(m0)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${m0_LABEL} ${r0_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0*)",
+      "cypher": "MATCH (n)-[r0]->(m0<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} ${m0_name}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0*)",
+      "cypher": "MATCH (n)<-[r0]-(m0<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${m0_name} ${r0_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0)-(m1*)",
+      "cypher": "MATCH (n)-[r0]->(m0)-[r1]->(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} [${m0_LABEL} that ${r1_LABEL} ${m1_name}]"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0)-(m1*)",
+      "cypher": "MATCH (n)-[r0]->(m0)<-[r1]-(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} [${m0_LABEL} that ${m1_name} ${r1_LABEL}]"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0)-(m1*)",
+      "cypher": "MATCH (n)<-[r0]-(m0)-[r1]->(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [some ${m0_LABEL} that ${r1_LABEL} ${m1_name}] ${r0_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0)-(m1*)",
+      "cypher": "MATCH (n)<-[r0]-(m0)<-[r1]-(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [some ${m0_LABEL} that ${m1_name} ${r1_LABEL}] ${r0_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0*),(n)-(m1*)",
+      "cypher": "MATCH (n)-[r0]->(m0<name>),(n)-[r1]->(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} [that ${r0_LABEL} ${m0_name}] and [that ${r1_LABEL} ${m1_name}]"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0*),(n)-(m1*)",
+      "cypher": "MATCH (n)-[r0]->(m0<name>),(n)<-[r1]-(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} [that ${r0_LABEL} ${m0_name}] and [that ${m1_name} ${r1_LABEL}]"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)-(m0*),(n)-(m1*)",
+      "cypher": "MATCH (n)<-[r0]-(m0<name>),(n)<-[r1]-(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} [that ${m0_name} ${r0_LABEL}] and [that ${m1_name} ${r1_LABEL}]"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)=(m0)",
+      "cypher": "MATCH (n)-[r0]->(m0),(n)-[r1]->(m0)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} and ${r1_LABEL} the same ${m0_LABEL}"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "basic_(n)=(m0)",
+      "cypher": "MATCH (n)<-[r0]-(m0),(n)<-[r1]-(m0)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that a ${m0_LABEL} [${r0_LABEL} and ${r1_LABEL}]"
+      },
+      "return_category": "n_basic"
+    },
+    {
+      "category": "special_optional-match",
+      "cypher": "MATCH (n)-[r1]->(m1<name>) OPTIONAL MATCH (n)-[r0]->(m0)",
+      "nl_args": {
+        "n_desc": "all ${n_LABEL} that ${r1_LABEL} ${m1_name}",
+        "m0_desc": "${m0_LABEL} it ${r0_LABEL}"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_optional-match",
+      "cypher": "MATCH (n)-[r1]->(m1<name>) OPTIONAL MATCH (n)<-[r0]-(m0)",
+      "nl_args": {
+        "n_desc": "all ${n_LABEL} that ${r1_LABEL} ${m1_name}",
+        "m0_desc": "${m0_LABEL} that ${r0_LABEL} it"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_optional-match",
+      "cypher": "MATCH (n)<-[r1]-(m1<name>) OPTIONAL MATCH (n)-[r0]->(m0)",
+      "nl_args": {
+        "n_desc": "all ${n_LABEL} that ${m1_name} ${r1_LABEL}",
+        "m0_desc": "${m0_LABEL} it ${r0_LABEL}"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_optional-match",
+      "cypher": "MATCH (n)<-[r1]-(m1<name>) OPTIONAL MATCH (n)<-[r0]-(m0)",
+      "nl_args": {
+        "n_desc": "all ${n_LABEL} that ${m1_name} ${r1_LABEL}",
+        "m0_desc": "${m0_LABEL} that ${r0_LABEL} it"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_three-node-groupby",
+      "cypher": "MATCH (n)-[r0]->(m0)-[r1]->(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} [${m0_LABEL} that ${r1_LABEL} ${m1_name}]",
+        "m0_desc": "[${m0_LABEL} that ${r1_LABEL} ${m1_name}] that it ${r0_LABEL}"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_three-node-groupby",
+      "cypher": "MATCH (n)-[r0]->(m0)<-[r1]-(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} [${m0_LABEL} that ${m1_name} ${r1_LABEL}]",
+        "m0_desc": "[${m0_LABEL} that ${m1_name} ${r1_LABEL}] that it ${r0_LABEL}"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_three-node-groupby",
+      "cypher": "MATCH (n)<-[r0]-(m0)-[r1]->(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [${m0_LABEL} that ${r1_LABEL} ${m1_name}] ${r0_LABEL}",
+        "m0_desc": "[${m0_LABEL} that ${r1_LABEL} ${m1_name}] that ${r0_LABEL} it"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_three-node-groupby",
+      "cypher": "MATCH (n)<-[r0]-(m0)<-[r1]-(m1<name>)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [${m0_LABEL} that ${m1_name} ${r1_LABEL}] ${r0_LABEL}",
+        "m0_desc": "[${m0_LABEL} that ${m1_name} ${r1_LABEL}] that ${r0_LABEL} it"
+      },
+      "return_category": "n_m0_group_by"
+    },
+    {
+      "category": "special_time-sensitive",
+      "cypher": "MATCH (n)-[r0<start_year,end_year^>]->(m0<name>) WHERE r0.start_year IS NOT NULL AND r0.end_year IS NULL",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that currently ${r0_LABEL} ${m0_name}"
+      },
+      "return_category": "n_name"
+    },
+    {
+      "category": "special_time-sensitive",
+      "cypher": "MATCH (n)<-[r0<start_year,end_year^>]-(m0<name>) WHERE r0.start_year IS NOT NULL AND r0.end_year IS NULL",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${m0_name} currently ${r0_LABEL}"
+      },
+      "return_category": "n_name"
+    },
+    {
+      "category": "special_time-sensitive",
+      "cypher": "MATCH (n)-[r0<start_year,end_year?>]->(m0<name>) WHERE r0.start_year <= ${r0_start_year} AND (r0.end_year >= ${r0_start_year} OR r0.end_year IS NULL)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${r0_LABEL} ${m0_name} in ${r0_start_year}"
+      },
+      "return_category": "n_name"
+    },
+    {
+      "category": "special_time-sensitive",
+      "cypher": "MATCH (n)<-[r0<start_year,end_year?>]-(m0<name>) WHERE r0.start_year <= ${r0_start_year} AND (r0.end_year >= ${r0_start_year} OR r0.end_year IS NULL)",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that ${m0_name} ${r0_LABEL} in ${r0_start_year}"
+      },
+      "return_category": "n_name"
+    },
+    {
+      "category": "special_comparison",
+      "cypher": "MATCH (n<name,$prop>),(m0<name,$prop>)",
+      "nl_args": {
+        "n_desc": "${n_name}",
+        "m0_desc": "${m0_name}",
+        "prop": "${prop}"
+      },
+      "return_category": "n_m0_comparison"
+    },
+    {
+      "category": "special_union",
+      "cypher": "CALL { MATCH (n)-[r0]->(m0<name>) RETURN n, m0 AS m UNION MATCH (n)-[r1]->(m1<name>) RETURN n, m1 AS m }",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [${r0_LABEL} ${m0_name}] or [${r1_LABEL} ${m1_name}]"
+      },
+      "return_category": "n_union"
+    },
+    {
+      "category": "special_union",
+      "cypher": "CALL { MATCH (n)-[r0]->(m0<name>) RETURN n, m0 AS m UNION MATCH (n)<-[r1]-(m1<name>) RETURN n, m1 AS m }",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [${r0_LABEL} ${m0_name}] or [${m1_name} ${r1_LABEL}]"
+      },
+      "return_category": "n_union"
+    },
+    {
+      "category": "special_union",
+      "cypher": "CALL { MATCH (n)<-[r0]-(m0<name>) RETURN n, m0 AS m UNION MATCH (n)<-[r1]-(m1<name>) RETURN n, m1 AS m }",
+      "nl_args": {
+        "n_desc": "${n_LABEL} that [${m0_name} ${r0_LABEL}] or [${m1_name} ${r1_LABEL}]"
+      },
+      "return_category": "n_union"
+    }
+  ],
+  "return_patterns": [
+    {
+      "category": "n_basic",
+      "pattern_id": "n_name",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.name",
+      "nl_template": "List the names of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_prop",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.${prop}",
+      "nl_template": "What is the ${prop} of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_name_prop",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.name, n.${prop}",
+      "nl_template": "List the names of ${n_desc} and their ${prop}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_prop_distinct",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN DISTINCT n.${prop}",
+      "nl_template": "What are the distinct ${prop} of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_prop_array_distinct",
+      "cypher": "${match_cypher} WITH DISTINCT n UNWIND n.${prop} AS prop RETURN DISTINCT prop",
+      "nl_template": "What are the distinct ${prop} of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_order_by",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.name ORDER BY n.${prop} ${order}",
+      "nl_template": "List the names of ${n_desc}, ordered by ${prop} in ${order_nl} order",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_argmax",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.name ORDER BY n.${prop} ${order} LIMIT 1",
+      "nl_template": "Among ${n_desc}, return the name of the one with the ${order_nl} ${prop}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_where",
+      "cypher": "${match_cypher} WITH DISTINCT n WHERE ${condition} RETURN n.name",
+      "nl_template": "For ${n_desc}, return the names of those that ${condition_nl}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_agg",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN ${agg_clause}",
+      "nl_template": "List the ${agg_clause_nl} of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_basic",
+      "pattern_id": "n_group_by",
+      "cypher": "${match_cypher} WITH DISTINCT n WITH n.${key} AS key, ${agg_clause} AS agg RETURN key, agg",
+      "nl_template": "For ${n_desc}, return the distinct ${key} and for each ${key} the ${agg_clause_nl}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_name",
+      "pattern_id": "n_name_special",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.name",
+      "nl_template": "List the names of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_m0_group_by",
+      "pattern_id": "n_m0_group_by_count",
+      "cypher": "${match_cypher} WITH n, count(DISTINCT m0) AS num RETURN n.name, num",
+      "nl_template": "List the names of [${n_desc}], and for each of those the number of ${m0_desc}",
+      "return_vars": [
+        "n",
+        "m0"
+      ]
+    },
+    {
+      "category": "n_m0_comparison",
+      "pattern_id": "n_m0_comparison_argmax",
+      "cypher": "${match_cypher} RETURN CASE WHEN n.${prop} > m0.${prop} THEN n.name ELSE m0.name END AS answer",
+      "nl_template": "Among ${n_desc} and ${m0_desc}, return the name of the one with the higher ${prop}",
+      "return_vars": [
+        "n",
+        "m0"
+      ]
+    },
+    {
+      "category": "n_m0_comparison",
+      "pattern_id": "n_m0_comparison_boolean",
+      "cypher": "${match_cypher} RETURN n.${prop} = m0.${prop} AS answer",
+      "nl_template": "Do ${n_desc} and ${m0_desc} have the same ${prop}",
+      "return_vars": [
+        "n",
+        "m0"
+      ]
+    },
+    {
+      "category": "n_m0_comparison",
+      "pattern_id": "n_m0_comparison_arithmetic",
+      "cypher": "${match_cypher} RETURN n.${prop} - m0.${prop} AS answer",
+      "nl_template": "How much more ${prop} does ${n_desc} have compared to ${m0_desc}",
+      "return_vars": [
+        "n",
+        "m0"
+      ]
+    },
+    {
+      "category": "n_union",
+      "pattern_id": "n_union_count",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN count(n)",
+      "nl_template": "What is the number of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    },
+    {
+      "category": "n_union",
+      "pattern_id": "n_union_name",
+      "cypher": "${match_cypher} WITH DISTINCT n RETURN n.name",
+      "nl_template": "List the names of ${n_desc}",
+      "return_vars": [
+        "n"
+      ]
+    }
+  ]
+}

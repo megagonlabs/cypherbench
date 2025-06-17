@@ -1,0 +1,957 @@
+{
+  "art": {
+    "relations": [
+      {
+        "label": "displayedAt",
+        "variants": [
+          "displayedAt#Painting#Museum",
+          "displayedAt#Sculpture#Museum"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "createdBy",
+        "variants": [
+          "createdBy#Painting#Person",
+          "createdBy#Sculpture#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasGenre",
+        "variants": [
+          "hasGenre#Painting#Genre",
+          "hasGenre#Sculpture#Genre"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "associatedWith",
+        "variants": [
+          "associatedWith#Painting#ArtMovement",
+          "associatedWith#Sculpture#ArtMovement"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      }
+    ]
+  },
+  "biology": {
+    "relations": [
+      {
+        "label": "hasParent",
+        "variants": [
+          "hasParent#Taxon#Taxon"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasRank",
+        "variants": [
+          "hasRank#Taxon#TaxonRank"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasConservationStatus",
+        "variants": [
+          "hasConservationStatus#Taxon#ConservationStatus"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "inhabits",
+        "variants": [
+          "inhabits#Taxon#Habitat"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "feedsOn",
+        "variants": [
+          "feedsOn#Taxon#Taxon"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      }
+    ]
+  },
+  "company": {
+    "relations": [
+      {
+        "label": "basedIn",
+        "variants": [
+          "basedIn#Company#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "subsidiaryOf",
+        "variants": [
+          "subsidiaryOf#Company#Company"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "foundedBy",
+        "variants": [
+          "foundedBy#Company#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "operatesIn",
+        "variants": [
+          "operatesIn#Company#Industry"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "hasCEO",
+        "variants": [
+          "hasCEO#Company#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "hasBoardMember",
+        "variants": [
+          "hasBoardMember#Company#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      }
+    ]
+  },
+  "fictional_character": {
+    "relations": [
+      {
+        "label": "fromUniverse",
+        "variants": [
+          "fromUniverse#Character#FictionalUniverse",
+          "fromUniverse#Organization#FictionalUniverse"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasMother",
+        "variants": [
+          "hasMother#Character#Character"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasFather",
+        "variants": [
+          "hasFather#Character#Character"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasSpouse",
+        "variants": [
+          "hasSpouse#Character#Character"
+        ],
+        "is_symmetric": true,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "one",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "memberOf",
+        "variants": [
+          "memberOf#Character#Organization"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "diedIn",
+        "variants": [
+          "diedIn#Character#Location"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "killedBy",
+        "variants": [
+          "killedBy#Character#Character"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "bornIn",
+        "variants": [
+          "bornIn#Character#Location"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasStudent",
+        "variants": [
+          "hasStudent#Character#Character"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "basedIn",
+        "variants": [
+          "basedIn#Organization#Location"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      }
+    ]
+  },
+  "flight_accident": {
+    "relations": [
+      {
+        "label": "destinedFor",
+        "variants": [
+          "destinedFor#FlightAccident#Airport"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "operatedBy",
+        "variants": [
+          "operatedBy#FlightAccident#Operator"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "involves",
+        "variants": [
+          "involves#FlightAccident#AircraftModel"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "departsFrom",
+        "variants": [
+          "departsFrom#FlightAccident#Airport"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "manufacturedBy",
+        "variants": [
+          "manufacturedBy#AircraftModel#AircraftManufacturer"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      }
+    ]
+  },
+  "geography": {
+    "relations": [
+      {
+        "label": "flowsThrough",
+        "variants": [
+          "flowsThrough#River#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "flowsInto",
+        "variants": [
+          "flowsInto#River#River",
+          "flowsInto#River#Ocean",
+          "flowsInto#River#Lake"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "partOf",
+        "variants": [
+          "partOf#River#DrainageBasin",
+          "partOf#Lake#DrainageBasin",
+          "partOf#Mountain#MountainRange",
+          "partOf#MountainRange#MountainRange"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "locatedIn",
+        "variants": [
+          "locatedIn#Lake#Country",
+          "locatedIn#DrainageBasin#Country",
+          "locatedIn#Mountain#Country",
+          "locatedIn#Country#Continent"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      }
+    ]
+  },
+  "movie": {
+    "relations": [
+      {
+        "label": "hasGenre",
+        "variants": [
+          "hasGenre#Movie#Genre"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "directedBy",
+        "variants": [
+          "directedBy#Movie#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "writtenBy",
+        "variants": [
+          "writtenBy#Movie#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "hasCastMember",
+        "variants": [
+          "hasCastMember#Movie#Person"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "receivesAward",
+        "variants": [
+          "receivesAward#Movie#Award"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "producedBy",
+        "variants": [
+          "producedBy#Movie#ProductionCompany"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "originatesFrom",
+        "variants": [
+          "originatesFrom#Movie#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "releasedIn",
+        "variants": [
+          "releasedIn#Movie#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "partOfSeries",
+        "variants": [
+          "partOfSeries#Movie#FilmSeries"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      }
+    ]
+  },
+  "nba": {
+    "relations": [
+      {
+        "label": "hasHomeVenue",
+        "variants": [
+          "hasHomeVenue#Team#Venue"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "one",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "partOfDivision",
+        "variants": [
+          "partOfDivision#Team#Division"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "playsFor",
+        "variants": [
+          "playsFor#Player#Team"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "playsPosition",
+        "variants": [
+          "playsPosition#Player#Position"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "draftedBy",
+        "variants": [
+          "draftedBy#Player#Team"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "receivesAward",
+        "variants": [
+          "receivesAward#Player#Award"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "partOfConference",
+        "variants": [
+          "partOfConference#Division#Conference"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      }
+    ]
+  },
+  "politics": {
+    "relations": [
+      {
+        "label": "holdsPosition",
+        "variants": [
+          "holdsPosition#Politician#Position"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "memberOf",
+        "variants": [
+          "memberOf#Politician#PoliticalParty",
+          "memberOf#Country#InternationalOrganization"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasDiplomaticRelationWith",
+        "variants": [
+          "hasDiplomaticRelationWith#Country#Country"
+        ],
+        "is_symmetric": true,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "hasHeadOfState",
+        "variants": [
+          "hasHeadOfState#Country#Politician"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "one",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "hasHeadOfGovernment",
+        "variants": [
+          "hasHeadOfGovernment#Country#Politician"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "one",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "operatesIn",
+        "variants": [
+          "operatesIn#PoliticalParty#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "foundedBy",
+        "variants": [
+          "foundedBy#PoliticalParty#Politician"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "one",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "headedBy",
+        "variants": [
+          "headedBy#PoliticalParty#Politician"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": false,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "leads",
+        "variants": [
+          "leads#Position#GovernmentOrganization"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "one",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "belongsTo",
+        "variants": [
+          "belongsTo#GovernmentOrganization#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      }
+    ]
+  },
+  "soccer": {
+    "relations": [
+      {
+        "label": "receivesAward",
+        "variants": [
+          "receivesAward#Player#Award"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": false,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "playsFor",
+        "variants": [
+          "playsFor#Player#Club"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "playsPosition",
+        "variants": [
+          "playsPosition#Player#Position"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "partOfLeague",
+        "variants": [
+          "partOfLeague#Club#League"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "hasHomeVenue",
+        "variants": [
+          "hasHomeVenue#Club#Venue"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": true,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "one",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      }
+    ]
+  },
+  "terrorist_attack": {
+    "relations": [
+      {
+        "label": "occursIn",
+        "variants": [
+          "occursIn#TerroristAttack#Country"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "one",
+        "implied_relations": []
+      },
+      {
+        "label": "perpetratedBy",
+        "variants": [
+          "perpetratedBy#TerroristAttack#Terrorist"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "one",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "employs",
+        "variants": [
+          "employs#TerroristAttack#Weapon"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      },
+      {
+        "label": "targets",
+        "variants": [
+          "targets#TerroristAttack#Target"
+        ],
+        "is_symmetric": false,
+        "is_time_sensitive": false,
+        "is_mandatory_subj": true,
+        "is_mandatory_obj": true,
+        "subj_cardinality": "many",
+        "obj_cardinality": "many",
+        "implied_relations": []
+      }
+    ]
+  }
+}
