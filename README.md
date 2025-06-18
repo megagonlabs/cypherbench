@@ -9,11 +9,11 @@ This repository contains the resource for the paper [CypherBench: Towards Precis
 
 You might find this repository useful if you are interested in:
 - Building Text2Cypher models, including:
-  - Running baselines on CypherBench [[relevant code]](cypherbench/baseline/zero_shot_nl2cypher.py)
-  - Fetching structured schema from a Neo4j database [[relevant code]](cypherbench/neo4j_connector.py#L96-L154)
-  - Metrics for measuring Text2Cypher performance [[relevant code]](cypherbench/metrics)
-- Creating domain knowledge graphs from Wikidata [[relevant code]](cypherbench/wd2neo4j) [[doc]](#-wikidata-to-property-graph-conversion-engine)
-- Generating Text2Cypher tasks for your own Neo4j graphs [[relevant code]](cypherbench/taskgen) [[doc]](#-text2cypher-task-generation-pipeline)
+  - Running baselines on CypherBench [[code]](cypherbench/baseline/zero_shot_nl2cypher.py) [[doc]](#-quickstart)
+  - Fetching structured schema from a Neo4j database [[code]](cypherbench/neo4j_connector.py#L96-L154)
+  - Metrics for measuring Text2Cypher performance [[code]](cypherbench/metrics)
+- Creating domain knowledge graphs from Wikidata [[code]](cypherbench/wd2neo4j) [[doc]](#-wikidata-to-property-graph-conversion-engine)
+- Generating Text2Cypher tasks for your own Neo4j graphs [[code]](cypherbench/taskgen) [[doc]](#-text2cypher-task-generation-pipeline)
 
 <img src="assets/text2cypher.png" width="75%">
 
@@ -150,7 +150,7 @@ docker run -d \
   megagonlabs/neo4j-with-loader:2.4
 ```
 
-## ⚙️ Text2Cypher Task Generation Pipeline
+## ⚙️ Text2cypher Task Generation Pipeline
 
 We also open-source the text2cypher task generation pipeline in the [cypherbench/taskgen](cypherbench/taskgen) package. You can generate as many text2cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
 
