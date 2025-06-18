@@ -188,9 +188,9 @@ Under the hood, the pipeline generates the tasks by the following steps:
 
 ## 📅 Future Release Plan
 
-- [x] text-to-cypher tasks
+- [x] Text-to-Cypher tasks
 - [x] 11 property graphs and graph deployment docker
-- [x] text-to-cypher baseline code
+- [x] Text-to-Cypher baseline code
 - [x] EX/PSJS implementation and evaluation scripts
 - [x] Text-to-Cypher task generation pipeline
 - [x] Wikidata RDF-to-property-graph engine
