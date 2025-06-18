@@ -605,6 +605,8 @@ def main():
         except:
             print(raw_resp)
         return
+    
+    os.makedirs(args.output_dir, exist_ok=True)
 
     output_path = os.path.join(args.output_dir, os.path.basename(args.neo4j_schema).replace('.json', '-graph.json'))
 
