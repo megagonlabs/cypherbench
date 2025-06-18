@@ -12,15 +12,15 @@ You might find this repository useful if you are interested in:
   - Running baselines on CypherBench [[relevant code]](cypherbench/baseline/zero_shot_nl2cypher.py)
   - Fetching structured schema from a Neo4j database [[relevant code]](cypherbench/neo4j_connector.py#L96-L154)
   - Metrics for measuring Text2Cypher performance [[relevant code]](cypherbench/metrics)
-- Creating domain knowledge graphs from Wikidata [[relevant code]](cypherbench/wd2neo4j)
-- Generating Text2Cypher tasks for your own Neo4j graphs [[relevant code]](cypherbench/taskgen)
+- Creating domain knowledge graphs from Wikidata [[relevant code]](cypherbench/wd2neo4j) [[doc]](#-wikidata-to-property-graph-conversion-engine)
+- Generating Text2Cypher tasks for your own Neo4j graphs [[relevant code]](cypherbench/taskgen) [[doc]](#-text2cypher-task-generation-pipeline)
 
 <img src="assets/text2cypher.png" width="75%">
 
 ## 🔥 Updates
 
-- [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#🌐-wikidata-to-property-graph-conversion-engine) below!
-- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See the [instructions](#⚙️-text2cypher-task-generation-pipeline) below!
+- [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
+- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See the [instructions](#-text2cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
 - [Feb 20, 2025] We updated the graph deployment configuration to reduce RAM usage.
 - [Feb 19, 2025] We have released the evaluation scripts and the EX and PSJS implementations!
