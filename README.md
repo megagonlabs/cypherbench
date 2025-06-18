@@ -106,9 +106,17 @@ Reference performance for `gpt-4o-mini`:
 ...
 ```
 
-## ⚙️ Running Text2Cypher Task Generation Pipeline
+## 🌐 Wikidata-to-Neo4j Conversion Engine
 
-The text2cypher task generation pipeline requires a set of sampled subgraphs of the original full-scale graphs for efficient template instantiation. The graphs are already uploaded to the HuggingFace repo (if you have previously cloned the repo, run a `git pull` under `benchmark/`, otherwise, follow the instructions in the [Download the dataset](#2-download-the-dataset) section) and can be deployed using the following commands:
+We open-source our Wikidata-to-Neo4j conversion engine at the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) directory. You can create a domain knowledge graph from Wikidata by simply defining the graph schema!
+
+[Documentation coming soon!]
+
+## ⚙️ Text2Cypher Task Generation Pipeline
+
+We also open-source the text2cypher task generation pipeline at the [cypherbench/taskgen](cypherbench/taskgen) directory. You can create your own templates and use it to generate as many text2cypher tasks as you want!
+
+The task generation pipeline requires a set of sampled subgraphs of the original full-scale graphs for efficient template instantiation. The graphs are already uploaded to the HuggingFace repo (if you have previously cloned the repo, run a `git pull` under `benchmark/`, otherwise, follow the instructions in the [Download the dataset](#2-download-the-dataset) section) and can be deployed using the following commands:
 
 ```
 cd docker/
