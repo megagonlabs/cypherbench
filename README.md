@@ -1,9 +1,10 @@
-# 🔑 CypherBench
+<div align="center">
+<h1 align="center">CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era</h1>
 
-[![](https://img.shields.io/badge/license-apache2.0-green.svg)](LICENSE) 
-[![](https://img.shields.io/badge/🤗-HuggingFace-red.svg)](https://huggingface.co/datasets/megagonlabs/cypherbench)
-[![](https://img.shields.io/badge/paper-ACL2025-yellow.svg)](https://arxiv.org/pdf/2412.18702)
-[![](https://img.shields.io/badge/demo_graph-Neo4j-blue.svg)](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
+[🤗 Dataset](https://huggingface.co/datasets/megagonlabs/cypherbench) &nbsp;&nbsp; [📄 Paper](https://arxiv.org/pdf/2412.18702) &nbsp;&nbsp; [💻 Code](https://github.com/megagonlabs/cypherbench) &nbsp;&nbsp; [🌐 Demo Graph](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
+
+</div>
+
 
 <img src="assets/text2cypher.png" width="100%">
 
