@@ -5,8 +5,15 @@
 [![](https://img.shields.io/badge/paper-ACL2025-yellow.svg)](https://arxiv.org/pdf/2412.18702)
 [![](https://img.shields.io/badge/demo_graph-Neo4j-blue.svg)](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
 
-> CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era <br/>
-> Yanlin Feng, Simone Papicchio, Sajjadur Rahmanα
+This repository contains the resource for the paper [CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era](https://arxiv.org/pdf/2412.18702) by Yanlin Feng, Simone Papicchio, and Sajjadur Rahman.
+
+You might find this repository useful if you are interested in:
+- Building Text2Cypher models, including:
+  - Running baselines on CypherBench [[relevant code]](cypherbench/baseline/zero_shot_nl2cypher.py)
+  - Fetching structured schema from a Neo4j database [[relevant code]](cypherbench/neo4j_connector.py#L96-L154)
+  - Metrics for measuring Text2Cypher performance [[relevant code]](cypherbench/metrics)
+- Creating domain knowledge graphs from Wikidata [[relevant code]](cypherbench/wd2neo4j)
+- Generating Text2Cypher tasks for your own Neo4j graphs [[relevant code]](cypherbench/taskgen)
 
 <img src="assets/text2cypher.png" width="75%">
 
@@ -189,7 +196,7 @@ Under the hood, the pipeline generates the tasks by the following steps:
 - [x] Wikidata RDF-to-property-graph engine
 - [ ] Additional resources
 
-Please open a Github issue if you have any questions or need anything else that is not yet open-sourced!
+Please open a Github issue if you have any questions, find any bugs, or need anything else that is not yet open-sourced!
 
 ## 📚 Citation
 
