@@ -189,7 +189,7 @@ Under the hood, the pipeline generates the tasks by the following steps:
 - [x] Wikidata RDF-to-property-graph engine
 - [ ] Additional resources
 
-Please feel free to open an issue if you have any questions or need anything else that is not yet open-sourced!
+Please open a Github issue if you have any questions or need anything else that is not yet open-sourced!
 
 ## 📚 Citation
 
