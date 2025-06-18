@@ -12,7 +12,7 @@
 
 ## 🔥 Updates
 
-- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See [the instructions](#running-benchmark-generation-pipeline) below on how to run the pipeline.
+- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See [the instructions](#⚙️-running-text2cypher-task-generation-pipeline) below on how to run the pipeline.
 - [May 15, 2025] Our paper has been accepted to ACL 2025! See you in Vienna!
 - [Feb 20, 2025] We updated the graph deployment configuration to reduce RAM usage.
 - [Feb 19, 2025] We have released the evaluation scripts and the EX and PSJS implementations!
@@ -144,8 +144,8 @@ Under the hood, the pipeline generates the tasks by the following steps:
 - [x] 11 property graphs and graph deployment docker
 - [x] text2cypher baseline code
 - [x] EX/PSJS implementation and evaluation scripts
+- [x] Text2cypher task generation pipeline
 - [ ] Wikidata RDF-to-property-graph engine
-- [ ] Text2cypher task generation pipeline
 
 Please feel free to open an issue if you have any questions or suggestions!
 
