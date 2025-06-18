@@ -150,7 +150,7 @@ docker run -d \
   megagonlabs/neo4j-with-loader:2.4
 ```
 
-## ⚙️ Text-to-Cypher Task Generation Pipeline
+## 🏭 Text-to-Cypher Task Generation Pipeline
 
 We also open-source the text-to-cypher task generation pipeline in the [cypherbench/taskgen](cypherbench/taskgen) package. You can generate as many text-to-cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
 
