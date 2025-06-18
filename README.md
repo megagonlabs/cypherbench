@@ -116,7 +116,9 @@ Reference performance for `gpt-4o-mini`:
 
 ## 🌐 Wikidata-to-Property-Graph Conversion Engine
 
-We open-source our Wikidata-to-Property-Graph conversion engine in the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by just defining the graph schema!
+We open-source our Wikidata-to-Property-Graph conversion engine in the [cypherbench.wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by just defining the graph schema!
+
+### Quick Tutorial
 
 The first step is to define the graph schema in a JSON file. The schema should define the entity and relation types, along with their corresponding Wikidata QID/PIDs. We provide a [sample mini NBA schema](wd2neo4j_schemas/nba_mini.json) with a single relationship `partOfDivision` between `Team` and `Division`. For complete details on the schema format, see the [WDNeo4jSchema](cypherbench/wd2neo4j/schema.py#L301) data structure.
 
@@ -152,7 +154,7 @@ docker run -d \
 
 ## 🏭 Text-to-Cypher Task Generation Pipeline
 
-We also open-source the text-to-cypher task generation pipeline in the [cypherbench/taskgen](cypherbench/taskgen) package. You can generate as many text-to-cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
+We also open-source the text-to-cypher task generation pipeline in the [cypherbench.taskgen](cypherbench/taskgen) package. You can generate as many text-to-cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
 
 ### Reproducing CypherBench
 
