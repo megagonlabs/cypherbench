@@ -5,7 +5,9 @@
 [![](https://img.shields.io/badge/paper-ACL2025-yellow.svg)](https://arxiv.org/pdf/2412.18702)
 [![](https://img.shields.io/badge/demo_graph-Neo4j-blue.svg)](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)
 
-This repository contains the resource for the paper [CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era](https://arxiv.org/pdf/2412.18702) by Yanlin Feng, Simone Papicchio, and Sajjadur Rahman.
+<img src="assets/text2cypher.png" width="100%">
+
+This repository contains the code and resources for the paper [CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era](https://arxiv.org/pdf/2412.18702) by Yanlin Feng, Simone Papicchio, and Sajjadur Rahman.
 
 You might find this repository useful if you are interested in:
 - Building Text-to-Cypher models, including:
@@ -14,8 +16,6 @@ You might find this repository useful if you are interested in:
   - Metrics for measuring Text-to-Cypher performance [[code]](cypherbench/metrics)
 - Creating domain knowledge graphs from Wikidata [[code]](cypherbench/wd2neo4j) [[doc]](#-wikidata-to-property-graph-conversion-engine)
 - Generating Text-to-Cypher tasks for your own Neo4j graphs [[code]](cypherbench/taskgen) [[doc]](#-text-to-cypher-task-generation-pipeline)
-
-<img src="assets/text2cypher.png" width="75%">
 
 ## 🔥 Updates
 
