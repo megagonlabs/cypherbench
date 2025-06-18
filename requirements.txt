@@ -11,3 +11,4 @@ neo4j==5.24.0
 pydantic>=2.7.0
 tqdm
 tabulate
+pint
