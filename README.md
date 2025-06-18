@@ -8,23 +8,23 @@
 This repository contains the resource for the paper [CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era](https://arxiv.org/pdf/2412.18702) by Yanlin Feng, Simone Papicchio, and Sajjadur Rahman.
 
 You might find this repository useful if you are interested in:
-- Building Text2Cypher models, including:
+- Building Text-to-Cypher models, including:
   - Running baselines on CypherBench [[code]](cypherbench/baseline/zero_shot_nl2cypher.py) [[doc]](#-quickstart)
   - Fetching structured schema from a Neo4j database [[code]](cypherbench/neo4j_connector.py#L96-L154)
-  - Metrics for measuring Text2Cypher performance [[code]](cypherbench/metrics)
+  - Metrics for measuring Text-to-Cypher performance [[code]](cypherbench/metrics)
 - Creating domain knowledge graphs from Wikidata [[code]](cypherbench/wd2neo4j) [[doc]](#-wikidata-to-property-graph-conversion-engine)
-- Generating Text2Cypher tasks for your own Neo4j graphs [[code]](cypherbench/taskgen) [[doc]](#-text2cypher-task-generation-pipeline)
+- Generating Text-to-Cypher tasks for your own Neo4j graphs [[code]](cypherbench/taskgen) [[doc]](#-text-to-cypher-task-generation-pipeline)
 
 <img src="assets/text2cypher.png" width="75%">
 
 ## 🔥 Updates
 
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
-- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See the [instructions](#-text2cypher-task-generation-pipeline) below!
+- [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
 - [Feb 20, 2025] We updated the graph deployment configuration to reduce RAM usage.
 - [Feb 19, 2025] We have released the evaluation scripts and the EX and PSJS implementations!
-- [Feb 14, 2025] We have released the text2cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
+- [Feb 14, 2025] We have released the text-to-cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
 - [Feb 13, 2025] The [11 property graphs](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs) are now available on 🤗HuggingFace! We also make it super easy to deploy them (see the instructions below).
 - [Dec 27, 2024] We have deployed a [demo NBA graph](https://browser.neo4j.io/?dbms=neo4j%2Bs%3A%2F%2Fneo4j@36535562.databases.neo4j.io&db=neo4j)(password: `cypherbench`) at Neo4j AuraDB! Check it out! You can run Cypher queries like `MATCH (n:Player {name: 'LeBron James'})-[r]-(m) RETURN *`.
 - [Dec 27, 2024] The [training and test sets](https://huggingface.co/datasets/megagonlabs/cypherbench) are now available on 🤗HuggingFace! 
@@ -46,7 +46,7 @@ pip install -e .
 
 ### 2. Download the dataset
 
-To download the dataset (including both the graphs and text2cypher tasks), simply clone the [HuggingFace dataset repository](https://huggingface.co/datasets/megagonlabs/cypherbench):
+To download the dataset (including both the graphs and text-to-cypher tasks), simply clone the [HuggingFace dataset repository](https://huggingface.co/datasets/megagonlabs/cypherbench):
 
 ```bash
 # Make sure you have git-lfs installed (https://git-lfs.com)
@@ -81,8 +81,8 @@ Running `gpt-4o-mini` on the CypherBench test set costs around $0.3. First, make
 python -m cypherbench.baseline.zero_shot_nl2cypher --llm gpt-4o-mini --result_dir output/gpt-4o-mini/
 ```
 
-There are two ways to fetch the graph schemas when running text2cypher:
-- (default) `--load_schema_from json` loads the schema from the local JSON files stored in [the benchmark/graphs/schemas directory](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs/schemas). When using this option, the Neo4j databases are not used during text2cypher.
+There are two ways to fetch the graph schemas when running text-to-cypher:
+- (default) `--load_schema_from json` loads the schema from the local JSON files stored in [the benchmark/graphs/schemas directory](https://huggingface.co/datasets/megagonlabs/cypherbench/tree/main/graphs/schemas). When using this option, the Neo4j databases are not used during text-to-cypher.
 - `--load_schema_from neo4j` fetches the schema from the Neo4j database by executing special Cypher queries*. This option requires the Neo4j databases to be fully loaded.
 
 *We don't use apoc.meta.data() by default, see Appendix A.4 in the paper for details.
@@ -150,9 +150,9 @@ docker run -d \
   megagonlabs/neo4j-with-loader:2.4
 ```
 
-## ⚙️ Text2cypher Task Generation Pipeline
+## ⚙️ Text-to-Cypher Task Generation Pipeline
 
-We also open-source the text2cypher task generation pipeline in the [cypherbench/taskgen](cypherbench/taskgen) package. You can generate as many text2cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
+We also open-source the text-to-cypher task generation pipeline in the [cypherbench/taskgen](cypherbench/taskgen) package. You can generate as many text-to-cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
 
 ### Reproducing CypherBench
 
@@ -188,11 +188,11 @@ Under the hood, the pipeline generates the tasks by the following steps:
 
 ## 📅 Future Release Plan
 
-- [x] text2cypher tasks
+- [x] text-to-cypher tasks
 - [x] 11 property graphs and graph deployment docker
-- [x] text2cypher baseline code
+- [x] text-to-cypher baseline code
 - [x] EX/PSJS implementation and evaluation scripts
-- [x] Text2cypher task generation pipeline
+- [x] Text-to-Cypher task generation pipeline
 - [x] Wikidata RDF-to-property-graph engine
 - [ ] Additional resources
 
