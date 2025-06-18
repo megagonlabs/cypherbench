@@ -106,9 +106,26 @@ Reference performance for `gpt-4o-mini`:
 ...
 ```
 
-## 🌐 Wikidata-to-Neo4j Conversion Engine
+## 🌐 Wikidata-to-Property-Graph Conversion Engine
 
-We open-source our Wikidata-to-Neo4j conversion engine in the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by simply defining the graph schema!
+We open-source our Wikidata-to-Property-Graph conversion engine in the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by simply defining the graph schema!
+
+The first step is to define the graph schema in a JSON file. The schema should define the entity and relation types, along with their corresponding Wikidata QID/PIDs. We provide a [sample mini NBA schema](wd2neo4j_schemas/nba_mini.json) with a single relationship `partOfDivision` between `Team` and `Division`.
+
+Next, you can run the conversion engine by:
+
+```bash
+python -m cypherbench.wd2neo4j --neo4j_schema wd2neo4j_schemas/nba_mini.json --output_dir output/nba_mini/
+# output graph at output/nba_mini/nba_mini-graph.json
+```
+
+The engine will automatically issue SPARQL queries to Wikidata and assemble the retrieved data into a property graph.
+
+At this point, the property graph is saved in the [WikidataKG](cypherbench/wd2neo4j/schema.py#L384) format which contains Wikidata-dependent fields like `wikidata_qid`. We recommend converting it into the [SimpleKG](cypherbench/wd2neo4j/schema.py#L102) format, the generic property graph format used by the CypherBench graphs:
+
+```bash
+python -m cypherbench.wd2neo4j.wd2simplekg --input_path output/nba_mini/nba_mini-graph.json --output_path output/nba_mini/nba_mini-graph_simplekg.json
+```
 
 [Documentation coming soon!]
 
