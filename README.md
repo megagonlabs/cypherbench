@@ -105,6 +105,38 @@ Reference performance for `gpt-4o-mini`:
 ...
 ```
 
+## Running Benchmark Generation Pipeline
+
+The benchmark generation pipeline requires a set of sampled subgraphs of the original full-scale graphs for efficient template instantiation. The graphs are already uploaded to the HuggingFace repo (if you have previously cloned the repo, run a `git pull` under `benchmark/`, otherwise, follow the instructions in the [Download the dataset](#2-download-the-dataset) section) and can be deployed using the following commands:
+
+```
+cd docker/
+bash start_neo4j_sampled.sh  
+cd .. 
+
+# check if the graphs are fully loaded
+python scripts/print_db_sampled_status.py
+```
+
+After the graphs have been fully loaded, you can run the benchmark generation pipeline by:
+
+```bash
+bash scripts/run_benchmark_generation.sh output/taskgen/
+```
+
+The benchmark generation pipeline takes the following files as input:
+- [nl2cypher_generator_config.json](nl2cypher_generator_config.json) - The file that defines the question and Cypher templates (MATCH/RETURN patterns). You can create your own templates by following the syntax in the file.
+- [neo4j_info.json](neo4j_info.json) - The file that specifies the host and port of the Neo4j databases, including both the full-scale graphs and sampled graphs.
+- [graph_info.json](graph_info.json) - The file that specifies human-annotated characteristics (e.g. cardinality, participation, etc.) of the relations, which are used to detect semantically unrealistic questions (see Section 4.4.3 in the paper).
+
+Under the hood, the pipeline generates the benchmark by the following steps:
+1. [generate_benchmark.py](cypherbench/taskgen/generate_benchmark.py) - Intantiate the templates on the sampled Neo4j graphs.
+2. [filter_long_running.py](cypherbench/taskgen/filter_long_running.py) - Filter out the tasks that take more than 30 seconds to execute on the full-scale graphs.
+3. [rewrite_question_llm.py](cypherbench/taskgen/rewrite_question_llm.py) - Rewrite the questions into more natural language using LLMs.
+4. [verify_question_llm.py](cypherbench/taskgen/verify_question_llm.py) - Verify the rewritten questions using LLMs.
+
+
+
 ## 📅 Future Release Plan
 
 - [x] text2cypher tasks
