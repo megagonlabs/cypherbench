@@ -108,15 +108,17 @@ Reference performance for `gpt-4o-mini`:
 
 ## 🌐 Wikidata-to-Neo4j Conversion Engine
 
-We open-source our Wikidata-to-Neo4j conversion engine at the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) directory. You can create a domain knowledge graph from Wikidata by simply defining the graph schema!
+We open-source our Wikidata-to-Neo4j conversion engine in the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by simply defining the graph schema!
 
 [Documentation coming soon!]
 
 ## ⚙️ Text2Cypher Task Generation Pipeline
 
-We also open-source the text2cypher task generation pipeline at the [cypherbench/taskgen](cypherbench/taskgen) directory. You can create your own templates and use it to generate as many text2cypher tasks as you want!
+We also open-source the text2cypher task generation pipeline in the [cypherbench/taskgen](cypherbench/taskgen) package. You can generate as many text2cypher tasks as you want for your own Neo4j graphs! Simply pass in the Neo4j graph endpoint (host + port) to the [task generator](cypherbench/taskgen/generate_benchmark.py#L131). You can also create your own templates.
 
-The task generation pipeline requires a set of sampled subgraphs of the original full-scale graphs for efficient template instantiation. The graphs are already uploaded to the HuggingFace repo (if you have previously cloned the repo, run a `git pull` under `benchmark/`, otherwise, follow the instructions in the [Download the dataset](#2-download-the-dataset) section) and can be deployed using the following commands:
+### Reproducing CypherBench
+
+For the CypherBench graphs, the task generation pipeline requires a set of sampled subgraphs of the original full-scale graphs for efficient template instantiation. The graphs are already uploaded to the HuggingFace repo (if you have previously cloned the repo, run a `git pull` under `benchmark/`, otherwise, follow the instructions in the [Download the dataset](#2-download-the-dataset) section) and can be deployed using the following commands:
 
 ```
 cd docker/
