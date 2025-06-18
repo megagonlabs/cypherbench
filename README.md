@@ -12,8 +12,9 @@
 
 ## 🔥 Updates
 
-- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See [the instructions](#⚙️-running-text2cypher-task-generation-pipeline) below on how to run the pipeline.
-- [May 15, 2025] Our paper has been accepted to ACL 2025! See you in Vienna!
+- [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#🌐-wikidata-to-property-graph-conversion-engine) below!
+- [Jun 17, 2025] We have released the text2cypher task generation pipeline! See the [instructions](#⚙️-text2cypher-task-generation-pipeline) below!
+- [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
 - [Feb 20, 2025] We updated the graph deployment configuration to reduce RAM usage.
 - [Feb 19, 2025] We have released the evaluation scripts and the EX and PSJS implementations!
 - [Feb 14, 2025] We have released the text2cypher baseline code! See the instructions below on how to run `gpt-4o-mini` on CypherBench.
@@ -185,9 +186,10 @@ Under the hood, the pipeline generates the tasks by the following steps:
 - [x] text2cypher baseline code
 - [x] EX/PSJS implementation and evaluation scripts
 - [x] Text2cypher task generation pipeline
-- [ ] Wikidata RDF-to-property-graph engine
+- [x] Wikidata RDF-to-property-graph engine
+- [ ] Additional resources
 
-Please feel free to open an issue if you have any questions or suggestions!
+Please feel free to open an issue if you have any questions or need anything else that is not yet open-sourced!
 
 ## 📚 Citation
 
