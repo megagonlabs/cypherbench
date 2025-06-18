@@ -1,0 +1,35 @@
+{
+  "name": "nba_minii",
+  "entities": [
+    {
+      "label": "Team",
+      "wd_source": "Q13393265",
+      "wd_constraints": [
+        "$LINKED_TO(P118,Q155223)",
+        "$HAS_PROPERTY(P361)"
+      ],
+      "properties": [
+        {
+          "label": "head_coach",
+          "wd_source": "P286",
+          "datatype": "str"
+        }
+      ]
+    },
+    {
+      "label": "Division",
+      "wd_source": "Q3032333",
+      "wd_constraints": [
+        "$FROM_RELATION(partOfDivision)"
+      ]
+    }
+  ],
+  "relations": [
+    {
+      "label": "partOfDivision",
+      "wd_source": "P361",
+      "subj_label": "Team",
+      "obj_label": "Division"
+    }
+  ]
+}
