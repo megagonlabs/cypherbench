@@ -108,9 +108,9 @@ Reference performance for `gpt-4o-mini`:
 
 ## 🌐 Wikidata-to-Property-Graph Conversion Engine
 
-We open-source our Wikidata-to-Property-Graph conversion engine in the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by simply defining the graph schema!
+We open-source our Wikidata-to-Property-Graph conversion engine in the [cypherbench/wd2neo4j](cypherbench/wd2neo4j) package. You can create a domain knowledge graph from Wikidata by just defining the graph schema!
 
-The first step is to define the graph schema in a JSON file. The schema should define the entity and relation types, along with their corresponding Wikidata QID/PIDs. We provide a [sample mini NBA schema](wd2neo4j_schemas/nba_mini.json) with a single relationship `partOfDivision` between `Team` and `Division`.
+The first step is to define the graph schema in a JSON file. The schema should define the entity and relation types, along with their corresponding Wikidata QID/PIDs. We provide a [sample mini NBA schema](wd2neo4j_schemas/nba_mini.json) with a single relationship `partOfDivision` between `Team` and `Division`. For complete details on the schema format, see the [WDNeo4jSchema](cypherbench/wd2neo4j/schema.py#L301) data structure.
 
 Next, you can run the conversion engine by:
 
@@ -121,13 +121,26 @@ python -m cypherbench.wd2neo4j --neo4j_schema wd2neo4j_schemas/nba_mini.json --o
 
 The engine will automatically issue SPARQL queries to Wikidata and assemble the retrieved data into a property graph.
 
+If your graphs are too large (e.g. > 100k entities), you might get timeout errors because the official Wikidata SPARQL endpoint has a time limit of 60 seconds per query. In this case, you can deploy your own Wikidata SPARQL endpoint (documentation coming soon!) and pass in the url using the `--sparql_url` argument.
+
 At this point, the property graph is saved in the [WikidataKG](cypherbench/wd2neo4j/schema.py#L384) format which contains Wikidata-dependent fields like `wikidata_qid`. We recommend converting it into the [SimpleKG](cypherbench/wd2neo4j/schema.py#L102) format, the generic property graph format used by the CypherBench graphs:
 
 ```bash
 python -m cypherbench.wd2neo4j.wd2simplekg --input_path output/nba_mini/nba_mini-graph.json --output_path output/nba_mini/nba_mini-graph_simplekg.json
 ```
 
-[Documentation coming soon!]
+The property graph can now be deployed using our custom Neo4j Docker image:
+
+```bash
+docker run -d \
+  --name cypherbench-nba-mini \
+  -p 15095:7687 \
+  -p 7474:7474 \
+  -v $(pwd)/output/nba_mini/nba_mini-graph_simplekg.json:/init/graph.json \
+  -e NEO4J_AUTH="neo4j/cypherbench" \
+  -e NEO4J_PLUGINS='["apoc", "graph-data-science"]' \
+  megagonlabs/neo4j-with-loader:2.4
+```
 
 ## ⚙️ Text2Cypher Task Generation Pipeline
 
