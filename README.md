@@ -19,7 +19,7 @@ You might find this repository useful if you are interested in:
 
 ## 🔥 Updates
 
-- [Sep 28, 2026] We released [TabulaFlow](https://github.com/megagonlabs/tabulaflow/releases/tag/v0.1.0) with first-class CypherBench support. Download the benchmark, manage its Neo4j graphs, and run and evaluate agents end to end from one CLI. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
+- [Sep 28, 2026] We released [TabulaFlow](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/) with first-class CypherBench support. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
 - [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
@@ -99,7 +99,13 @@ tabulaflow benchmark stop cypherbench \
 For other model providers and advanced usage, see the [TabulaFlow CypherBench
 guide](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).
 
-### Use this repository directly
+============================================
+
+============================================
+
+============================================
+
+### Use the original code
 
 #### 1. Installation
 
