@@ -19,7 +19,11 @@ You might find this repository useful if you are interested in:
 
 ## 🔥 Updates
 
-- **[Sep 28, 2026] We released <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="20"></a> with first-class CypherBench support. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.**
+> [!IMPORTANT]
+> **[Sep 28, 2026] We released <a href="https://megagonlabs.github.io/tabulaflow/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="20"></a> with first-class CypherBench support.** TabulaFlow is a open-source data agent built on a modular python library. It can be used as an application like Claude Code, or as a library to build custom applications or write research code. We recommend using it to experiment with CypherBench. 
+>
+> [Try the TabulaFlow quickstart →](#run-cypherbench-with-tabulaflow-recommended)
+
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
 - [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
@@ -36,8 +40,8 @@ You might find this repository useful if you are interested in:
 <a id="run-cypherbench-with-tabulaflow-recommended"></a>
 <h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="32"></a> (recommended)</h3>
 
-TabulaFlow is a minimalist data-agent library that lets researchers write
-reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks. Read the
+TabulaFlow is a minimalist data-agent library enables writing
+reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks with different database backends. Its abstractions are designed to maximize the flexiblity for researchers. Read the
 [documentation](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
 to learn more.
 
