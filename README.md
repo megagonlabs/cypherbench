@@ -102,8 +102,16 @@ tabulaflow benchmark stop cypherbench \
   --database nba
 ```
 
-For other model providers and advanced usage, see the [TabulaFlow CypherBench
-guide](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).
+For typical researchers building a custom agent to evaluate on CypherBench, we
+recommend adding TabulaFlow as a dependency rather than maintaining a separate
+copy of its source code. If you prefer to modify TabulaFlow itself, fork the
+repository and install your fork instead.
+
+Relevant documentation:
+
+- [Research toolkit quick start](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
+- [CypherBench setup and usage](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench)
+- [Extending the toolkit](https://megagonlabs.github.io/tabulaflow/research-toolkit/extending/)
 
 ============================================
 
