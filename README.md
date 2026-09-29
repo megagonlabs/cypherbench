@@ -19,7 +19,7 @@ You might find this repository useful if you are interested in:
 
 ## 🔥 Updates
 
-- [Sep 24, 2026] We released [TabulaFlow](https://github.com/megagonlabs/tabulaflow/releases/tag/v0.1.0) with first-class CypherBench support. Download the benchmark, manage its Neo4j graphs, and run and evaluate agents end to end from one CLI. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
+- [Sep 28, 2026] We released [TabulaFlow](https://github.com/megagonlabs/tabulaflow/releases/tag/v0.1.0) with first-class CypherBench support. Download the benchmark, manage its Neo4j graphs, and run and evaluate agents end to end from one CLI. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
 - [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
@@ -36,20 +36,25 @@ You might find this repository useful if you are interested in:
 <a id="run-cypherbench-with-tabulaflow-recommended"></a>
 <h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="32"></a> (recommended)</h3>
 
-TabulaFlow is a minimalist data agent library that allows researchers to focus on writing reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks. Read the [docs] to learn more.
+TabulaFlow is a minimalist data-agent library that lets researchers write
+reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks. Read the
+[documentation](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
+to learn more.
 
-Compared to the original code, it supports starting inidividual graphs seprately without docker compose, and has lower RAM usage, and supports 25+ llm providers. It is also actively maintained by the Cypherbench Authors.
+Compared with the original code, TabulaFlow can start individual
+graphs without Docker Compose, reduces memory requirements, and supports more
+than 25 LLM providers. It is actively maintained by the CypherBench authors.
 
-First ensure you have [`uv`](https://docs.astral.sh/uv/) installed, then install TabulaFlow:
+First, install [`uv`](https://docs.astral.sh/uv/), then install TabulaFlow and
+download CypherBench:
 
 ```bash
 uv tool install tabulaflow
 tabulaflow benchmark download cypherbench
 ```
 
-Ensure that
-[Docker is installed](https://docs.docker.com/get-started/get-docker/) and running.
-Start only the NBA test database:
+Make sure [Docker is installed](https://docs.docker.com/get-started/get-docker/)
+and running, then start only the NBA test database:
 
 ```bash
 tabulaflow benchmark start cypherbench \
@@ -66,7 +71,7 @@ tabulaflow benchmark start cypherbench --split test
 ```
 
 Run five tasks against the NBA database with a
-[configured model provider](../models.md#supported-providers):
+[configured model provider](https://github.com/megagonlabs/tabulaflow/blob/main/docs/models.md#supported-providers):
 
 ```bash
 export OPENAI_API_KEY="your-api-key"
@@ -91,8 +96,7 @@ tabulaflow benchmark stop cypherbench \
   --database nba
 ```
 
-For other model providers and
-advanced usage, see the [TabulaFlow CypherBench
+For other model providers and advanced usage, see the [TabulaFlow CypherBench
 guide](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).
 
 ### Use this repository directly
