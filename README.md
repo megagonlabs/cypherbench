@@ -90,7 +90,7 @@ tabulaflow benchmark run cypherbench \
 ```
 
 The command prints the metric summary and saves the predictions, scores,
-agent trajectories, token usage, and latency under `runs/cypherbench-nba/`.
+agent trajectories, token usage, and latency under `runs/cypherbench-nba/`. Running `gpt-4o-mini` on the full test set costs around $0.3. 
 
 When finished, remove the NBA container:
 
