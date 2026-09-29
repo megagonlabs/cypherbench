@@ -75,7 +75,7 @@ tabulaflow benchmark start cypherbench --split test
 ```
 
 Run five tasks against the NBA database with a
-[configured model provider](https://github.com/megagonlabs/tabulaflow/blob/main/docs/models.md#supported-providers):
+[configured model provider](https://megagonlabs.github.io/tabulaflow/models/):
 
 ```bash
 export OPENAI_API_KEY="your-api-key"
