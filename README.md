@@ -9,13 +9,6 @@
 
 This repository contains the code and resources for the paper [CypherBench: Towards Precise Retrieval over Full-scale Modern Knowledge Graphs in the LLM Era](https://arxiv.org/pdf/2412.18702) by Yanlin Feng, Simone Papicchio, and Sajjadur Rahman.
 
-You might find this repository useful if you are interested in:
-- Building Text-to-Cypher models, including:
-  - Running baselines on CypherBench [[code]](cypherbench/baseline/zero_shot_nl2cypher.py) [[doc]](#-quickstart)
-  - Fetching structured schema from a Neo4j database [[code]](cypherbench/neo4j_connector.py#L96-L154)
-  - Metrics for measuring Text-to-Cypher performance [[code]](cypherbench/metrics)
-- Creating domain knowledge graphs from Wikidata [[code]](cypherbench/wd2neo4j) [[doc]](#-wikidata-to-property-graph-conversion-engine)
-- Generating Text-to-Cypher tasks for your own Neo4j graphs [[code]](cypherbench/taskgen) [[doc]](#-text-to-cypher-task-generation-pipeline)
 
 ## 🔥 Updates
 
