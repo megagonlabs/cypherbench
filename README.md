@@ -17,7 +17,7 @@ This repository contains the code and resources for the paper [CypherBench: Towa
 >
 > **[Sep 28, 2026] We released [TabulaFlow](https://megagonlabs.github.io/tabulaflow/) with first-class CypherBench support.** TabulaFlow is an open-source data agent built on a modular Python library. It can be used as a standalone application, like Claude Code, or as a library for building custom applications and writing research code. We recommend using it to experiment with CypherBench.
 >
-> [Try the TabulaFlow quickstart →](#run-cypherbench-with-tabulaflow-recommended)
+> [Try the TabulaFlow quickstart →](#-quickstart-with-tabulaflow)
 
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
 - [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
