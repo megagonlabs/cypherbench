@@ -19,7 +19,7 @@ You might find this repository useful if you are interested in:
 
 ## 🔥 Updates
 
-- [Sep 24, 2026] We released [TabulaFlow v0.1.0](https://github.com/megagonlabs/tabulaflow/releases/tag/v0.1.0) with first-class CypherBench support. Download the benchmark, manage its Neo4j graphs, and run and evaluate agents end to end from one CLI. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
+- [Sep 24, 2026] We released [TabulaFlow](https://github.com/megagonlabs/tabulaflow/releases/tag/v0.1.0) with first-class CypherBench support. Download the benchmark, manage its Neo4j graphs, and run and evaluate agents end to end from one CLI. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
 - [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
@@ -33,13 +33,8 @@ You might find this repository useful if you are interested in:
 
 ## 🚀 Quickstart
 
-### Run CypherBench with TabulaFlow (recommended)
-
-<p align="center">
-  <a href="https://github.com/megagonlabs/tabulaflow">
-    <img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" width="240">
-  </a>
-</p>
+<a id="run-cypherbench-with-tabulaflow-recommended"></a>
+<h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="32"></a> (recommended)</h3>
 
 [TabulaFlow](https://github.com/megagonlabs/tabulaflow) handles the dataset
 download, Neo4j deployment, agent run, and standard CypherBench evaluation in
