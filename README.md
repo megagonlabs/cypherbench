@@ -35,7 +35,7 @@ This repository contains the code and resources for the paper [CypherBench: Towa
 <a id="run-cypherbench-with-tabulaflow-recommended"></a>
 <h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="40"></a> (recommended)</h3>
 
-TabulaFlow is a minimalist data-agent library enables writing
+TabulaFlow is a minimalist data-agent library that enables writing
 reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks with different database backends. Its abstractions are designed to maximize the flexiblity for researchers. Read the
 [documentation](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
 to learn more.
