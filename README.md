@@ -20,7 +20,9 @@ You might find this repository useful if you are interested in:
 ## 🔥 Updates
 
 > [!IMPORTANT]
-> **[Sep 28, 2026] We released <a href="https://megagonlabs.github.io/tabulaflow/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="28" align="middle"></a> with first-class CypherBench support.** TabulaFlow is an open-source data agent built on a modular Python library. It can be used as a standalone application, like Claude Code, or as a library for building custom applications and writing research code. We recommend using it to experiment with CypherBench.
+> <a href="https://megagonlabs.github.io/tabulaflow/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="40"></a>
+>
+> **[Sep 28, 2026] We released [TabulaFlow](https://megagonlabs.github.io/tabulaflow/) with first-class CypherBench support.** TabulaFlow is an open-source data agent built on a modular Python library. It can be used as a standalone application, like Claude Code, or as a library for building custom applications and writing research code. We recommend using it to experiment with CypherBench.
 >
 > [Try the TabulaFlow quickstart →](#run-cypherbench-with-tabulaflow-recommended)
 
@@ -38,7 +40,7 @@ You might find this repository useful if you are interested in:
 ## 🚀 Quickstart
 
 <a id="run-cypherbench-with-tabulaflow-recommended"></a>
-<h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="40" align="middle"></a> (recommended)</h3>
+<h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="40"></a> (recommended)</h3>
 
 TabulaFlow is a minimalist data-agent library enables writing
 reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks with different database backends. Its abstractions are designed to maximize the flexiblity for researchers. Read the
