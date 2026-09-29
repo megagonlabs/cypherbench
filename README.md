@@ -84,7 +84,7 @@ tabulaflow benchmark run cypherbench \
   --split test \
   --database nba \
   --agent direct_prompting \
-  --llm openai:gpt-6-luna \
+  --llm openai:gpt-4o-mini \
   --sample-size 5 \
   --output-dir runs/cypherbench-nba
 ```
