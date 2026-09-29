@@ -51,6 +51,8 @@ Compared with the original cypherbench code, TabulaFlow can start individual
 graphs without Docker Compose, reduces memory usage, and supports more
 than 25 LLM providers. It is actively maintained by the CypherBench authors.
 
+**The instructions below are also available [here](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).**
+
 First, install [`uv`](https://docs.astral.sh/uv/), then install TabulaFlow and
 download CypherBench:
 
