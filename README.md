@@ -34,20 +34,22 @@ You might find this repository useful if you are interested in:
 ## 🚀 Quickstart
 
 <a id="run-cypherbench-with-tabulaflow-recommended"></a>
-<h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="32"></a> (recommended)</h3>
+<h3>Run CypherBench with <a href="https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="32"></a> (recommended)</h3>
 
-[TabulaFlow](https://github.com/megagonlabs/tabulaflow) handles the dataset
-download, Neo4j deployment, agent run, and standard CypherBench evaluation in
-one CLI. Install [`uv`](https://docs.astral.sh/uv/) and
-[Docker](https://docs.docker.com/get-started/get-docker/), make sure Docker is
-running, and install TabulaFlow:
+TabulaFlow is a minimalist data agent library that allows researchers to focus on writing reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks. Read the [docs] to learn more.
+
+Compared to the original code, it supports starting inidividual graphs seprately without docker compose, and has lower RAM usage, and supports 25+ llm providers. It is also actively maintained by the Cypherbench Authors.
+
+First ensure you have [`uv`](https://docs.astral.sh/uv/) installed, then install TabulaFlow:
 
 ```bash
 uv tool install tabulaflow
 tabulaflow benchmark download cypherbench
 ```
 
-Start only the NBA test database. This avoids loading all seven test graphs:
+Ensure that
+[Docker is installed](https://docs.docker.com/get-started/get-docker/) and running.
+Start only the NBA test database:
 
 ```bash
 tabulaflow benchmark start cypherbench \
@@ -55,7 +57,16 @@ tabulaflow benchmark start cypherbench \
   --database nba
 ```
 
-Set your OpenAI API key, then run and evaluate five NBA tasks:
+To start all test databases at once, allow around 7 minutes for the first
+import and use a machine with at least 48 GB of RAM. On machines with less
+memory, start the databases individually with `--database` as shown above.
+
+```bash
+tabulaflow benchmark start cypherbench --split test
+```
+
+Run five tasks against the NBA database with a
+[configured model provider](../models.md#supported-providers):
 
 ```bash
 export OPENAI_API_KEY="your-api-key"
@@ -71,6 +82,7 @@ tabulaflow benchmark run cypherbench \
 
 The command prints the metric summary and saves the predictions, scores,
 agent trajectories, token usage, and latency under `runs/cypherbench-nba/`.
+
 When finished, remove the NBA container:
 
 ```bash
@@ -79,10 +91,7 @@ tabulaflow benchmark stop cypherbench \
   --database nba
 ```
 
-To start every test database instead, omit `--database nba`. Allow around 7
-minutes for the first import and use a machine with at least 48 GB of RAM. On
-machines with less memory, start and run one database at a time as shown above.
-Use `--split train` for the training split. For other model providers and
+For other model providers and
 advanced usage, see the [TabulaFlow CypherBench
 guide](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).
 
