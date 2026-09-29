@@ -19,6 +19,7 @@ You might find this repository useful if you are interested in:
 
 ## 🔥 Updates
 
+- [Sep 24, 2026] We released [TabulaFlow v0.1.0](https://github.com/megagonlabs/tabulaflow/releases/tag/v0.1.0) with first-class CypherBench support. Download the benchmark, manage its Neo4j graphs, and run and evaluate agents end to end from one CLI. See the [TabulaFlow quickstart](#run-cypherbench-with-tabulaflow-recommended) below.
 - [Jun 18, 2025] We have released the Wikidata-to-Property-Graph conversion engine! Check out the [instructions](#-wikidata-to-property-graph-conversion-engine) below!
 - [Jun 17, 2025] We have released the text-to-cypher task generation pipeline! See the [instructions](#-text-to-cypher-task-generation-pipeline) below!
 - [May 15, 2025] Our paper has been accepted to ACL 2025 main conference! See you in Vienna!
@@ -32,7 +33,67 @@ You might find this repository useful if you are interested in:
 
 ## 🚀 Quickstart
 
-### 1. Installation
+### Run CypherBench with TabulaFlow (recommended)
+
+<p align="center">
+  <a href="https://github.com/megagonlabs/tabulaflow">
+    <img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" width="240">
+  </a>
+</p>
+
+[TabulaFlow](https://github.com/megagonlabs/tabulaflow) handles the dataset
+download, Neo4j deployment, agent run, and standard CypherBench evaluation in
+one CLI. Install [`uv`](https://docs.astral.sh/uv/) and
+[Docker](https://docs.docker.com/get-started/get-docker/), make sure Docker is
+running, and install TabulaFlow:
+
+```bash
+uv tool install tabulaflow
+tabulaflow benchmark download cypherbench
+```
+
+Start only the NBA test database. This avoids loading all seven test graphs:
+
+```bash
+tabulaflow benchmark start cypherbench \
+  --split test \
+  --database nba
+```
+
+Set your OpenAI API key, then run and evaluate five NBA tasks:
+
+```bash
+export OPENAI_API_KEY="your-api-key"
+
+tabulaflow benchmark run cypherbench \
+  --split test \
+  --database nba \
+  --agent direct_prompting \
+  --llm openai:gpt-6-luna \
+  --sample-size 5 \
+  --output-dir runs/cypherbench-nba
+```
+
+The command prints the metric summary and saves the predictions, scores,
+agent trajectories, token usage, and latency under `runs/cypherbench-nba/`.
+When finished, remove the NBA container:
+
+```bash
+tabulaflow benchmark stop cypherbench \
+  --split test \
+  --database nba
+```
+
+To start every test database instead, omit `--database nba`. Allow around 7
+minutes for the first import and use a machine with at least 48 GB of RAM. On
+machines with less memory, start and run one database at a time as shown above.
+Use `--split train` for the training split. For other model providers and
+advanced usage, see the [TabulaFlow CypherBench
+guide](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).
+
+### Use this repository directly
+
+#### 1. Installation
 
 
 ```bash
@@ -44,7 +105,7 @@ cd cypherbench
 pip install -e .
 ```
 
-### 2. Download the dataset
+#### 2. Download the dataset
 
 To download the dataset (including both the graphs and text-to-cypher tasks), simply clone the [HuggingFace dataset repository](https://huggingface.co/datasets/megagonlabs/cypherbench):
 
@@ -56,7 +117,7 @@ git lfs install
 git clone https://huggingface.co/datasets/megagonlabs/cypherbench benchmark
 ```
 
-### 3. Deploy the graphs using Docker
+#### 3. Deploy the graphs using Docker
 
 ⚠️ Deploying the graphs requires significant memory. We recommend using a machine with at least 64GB of RAM when deploying the 7 test graphs and 128GB when deploying all 11 graphs. Additionally, ensure that Docker is installed ([Docker installation instructions](https://docs.docker.com/engine/install/)) before proceeding.
 
@@ -73,7 +134,7 @@ python scripts/print_db_status.py
 
 To stop the Neo4j databases, run `bash stop_neo4j_test.sh`.
 
-### 4. Run `gpt-4o-mini` on CypherBench
+#### 4. Run `gpt-4o-mini` on CypherBench
 
 Running `gpt-4o-mini` on the CypherBench test set costs around $0.3. First, make sure you have set the `OPENAI_API_KEY` environment variable to use the OpenAI API.
 
@@ -87,7 +148,7 @@ There are two ways to fetch the graph schemas when running text-to-cypher:
 
 *We don't use apoc.meta.data() by default, see Appendix A.4 in the paper for details.
 
-### 5. Evaluate metrics
+#### 5. Evaluate metrics
 
 ```bash
 python -m cypherbench.evaluate --result_dir output/gpt-4o-mini/  --num_threads 8  # Adjust the number of threads as needed
