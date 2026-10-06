@@ -30,18 +30,18 @@ This repository contains the code and resources for the paper [CypherBench: Towa
 - [Dec 27, 2024] The [training and test sets](https://huggingface.co/datasets/megagonlabs/cypherbench) are now available on 🤗HuggingFace! 
 
 
-## 🚀 Quickstart with [TabulaFlow](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
+## 🚀 Quickstart with [TabulaFlow](https://megagonlabs.github.io/tabulaflow/research/quick-start/)
 
 TabulaFlow is a minimalist data-agent library that enables writing
 reusable agent logic that runs across many text-to-Cypher and text-to-SQL benchmarks with different database backends. Its abstractions are designed to maximize the flexiblity for researchers. Read the
-[documentation](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
+[documentation](https://megagonlabs.github.io/tabulaflow/research/quick-start/)
 to learn more.
 
 Compared with the original cypherbench code, TabulaFlow can start individual
 graphs without Docker Compose, reduces memory usage, and supports more
 than 25 LLM providers. It is actively maintained by the CypherBench authors.
 
-**The instructions below are also available [here](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench).**
+**The instructions below are also available [here](https://megagonlabs.github.io/tabulaflow/research/benchmarks/#cypherbench).**
 
 First, install [`uv`](https://docs.astral.sh/uv/), then install TabulaFlow and
 download CypherBench:
@@ -103,16 +103,16 @@ There are multiple ways of using TabulaFlow:
 
 - For researchers building a custom agent, we
 recommend adding TabulaFlow as a dependency rather than maintaining a separate
-copy of its source code (see [Building a custom agent](https://megagonlabs.github.io/tabulaflow/research-toolkit/extending/) for writing an agent that can evaluate on many benchmarks).
+copy of its source code (see [Building a custom agent](https://megagonlabs.github.io/tabulaflow/research/extending/) for writing an agent that can evaluate on many benchmarks).
 
 - If you still prefer to modify TabulaFlow itself, fork the
 repository and install your fork instead.
 
 Relevant documentation:
 
-- [Research toolkit quick start](https://megagonlabs.github.io/tabulaflow/research-toolkit/quick-start/)
-- [CypherBench setup and usage](https://megagonlabs.github.io/tabulaflow/research-toolkit/benchmarks/#cypherbench)
-- [Building a custom agent](https://megagonlabs.github.io/tabulaflow/research-toolkit/extending/)
+- [Research toolkit quick start](https://megagonlabs.github.io/tabulaflow/research/quick-start/)
+- [CypherBench setup and usage](https://megagonlabs.github.io/tabulaflow/research/benchmarks/#cypherbench)
+- [Building a custom agent](https://megagonlabs.github.io/tabulaflow/research/extending/)
 
 ============================================
 <details>
