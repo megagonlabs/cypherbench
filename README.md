@@ -13,9 +13,12 @@ This repository contains the code and resources for the paper [CypherBench: Towa
 ## 🔥 Updates
 
 > [!IMPORTANT]
+> **[Oct 19, 2026]** We just released ARCS (Ambiguity Resolution Corpus for SQL), a new challenging text-to-SQL benchmark on realistic questions with user ambiguities! Check out the [website](https://megagonlabs.github.io/tabulaflow/research/arcs/) and [paper](https://arxiv.org/pdf/2610.09396)!
+
+> [!IMPORTANT]
 > <a href="https://megagonlabs.github.io/tabulaflow/"><img src="https://raw.githubusercontent.com/megagonlabs/tabulaflow/main/docs/assets/tabulaflow-wordmark.svg?v=2" alt="TabulaFlow" height="40"></a>
 >
-> **[Sep 28, 2026] We released [TabulaFlow](https://megagonlabs.github.io/tabulaflow/) with first-class CypherBench support.** TabulaFlow is an open-source data agent built on a modular Python library. It can be used as a standalone application, like Claude Code, or as a library for building custom applications and writing research code. We recommend using it to experiment with CypherBench.
+> **[Sep 28, 2026]** We released [TabulaFlow](https://megagonlabs.github.io/tabulaflow/) with first-class CypherBench support. TabulaFlow is an open-source data agent built on a modular Python library. It can be used as a standalone application, like Claude Code, or as a library for building custom applications and writing research code. We recommend using it to experiment with CypherBench.
 >
 > [Try the TabulaFlow quickstart →](#-quickstart-with-tabulaflow)
 
